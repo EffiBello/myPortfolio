@@ -109,7 +109,7 @@ a{
     display: flex;
     flex-direction: column;
     /* background-image: linear-gradient(rgb(177, 0, 177),rgb(109, 109, 255)); */
-    background-image: linear-gradient(135deg,rgb(15,15,15),rgb(65, 65, 65));
+    background-image: linear-gradient(135deg,rgb(15,15,15),rgb(20,20, 20),rgb(20,20, 20),rgb(20,20, 20),rgb(4, 21, 30));
     justify-content: center;
     z-index: 2;
    
@@ -205,6 +205,9 @@ a{
 
 #about-me{
     /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 50 auto;
     margin: 100px auto 10vw auto;
 }
@@ -212,7 +215,7 @@ a{
 
 
 h1{
-    font-size: 60px;
+    font-size: 66px;
     font-weight: 600;
     color:var(--nav_item);
     text-shadow: 0px 0px 5px black;
@@ -225,8 +228,8 @@ h1{
     font-family: poppins;
     color: white;
     font-size: 28px;
-    max-width: 700px;
-    margin-left: 300px;
+    max-width: 50%;
+   
 }
 
 
@@ -235,22 +238,18 @@ h1{
     flex-direction: column;
     align-items: center;
     margin: 100px auto 10vw auto;
-   /* background-color: purple; */
-   /* width: 100%; */
+    width: 100%;
+    
     
 }
 
 #all_skills{
-    margin-top: 0px;
-
     /* background-color: red;  */
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-
-    
+    width: 80%;
+ 
 }
 
 #skill_box{
@@ -258,37 +257,35 @@ h1{
     position: relative;
     width: 340px;
     height: 420px;
-    border-radius: 25px;
+    border-radius: 15px;
     text-align: center;
-    margin: 30px;
-    background-color: rgba(70, 70, 70, 0.9);
-    box-shadow: 0px 0px 20px black;
-    border: 1.5px black solid;
+    margin: 25px;
+    margin-top: 50px;
+    background-color: rgba(45, 45, 45, 0.9);
+    box-shadow: 0px 0px 10px rgba(96, 181, 255, 0.5);
+    border: 2px rgb(15, 15, 15) solid;
+    
+    
 }
 
 #skill_box::before{
    
-    border-radius:25px;
+    border-radius: 15px;
     position: absolute;
-    right: 1655px;
     content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
     left: 0px;
-    opacity: 0;
     background: 
     linear-gradient(135deg,rgba(0, 204, 184, 0.3) ,rgba(39, 151, 255, 0.2));
     
 }
 
 #skill_box:hover{
-    animation: skill_box 1s ease forwards;
+    animation: skill_box 0.7s ease forwards;
 }
 
 #skill_box:hover::before{
     
-    animation: beforePic 1.3s ease forwards   ;
+    animation: beforePic 1.2s ease forwards   ;
     
 }
 
@@ -306,10 +303,10 @@ h1{
     margin-bottom: 5px;
     margin-top: 0px;
     font-family: poppins;
-    font-size: 26px;
+    font-size: 27px;
     /* color: rgba(255,255,255,1); */
     color: var(--bright_nav_item_color);
-    text-shadow: 0px 0px 4px black;
+    text-shadow: 0px 0px 5px black;
 }
 
 .inside_skill_item_container{
@@ -477,18 +474,17 @@ button:hover{
 
 
 footer{
+    align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100%;
+    width: 99.9%;
+    border-radius: 5px;
     height:50px;
-    background:var(--nav_item);
+    background:rgb(20, 20, 20);
     box-shadow: 0px 0px 5px black;
-    color:black;
-   
-   
-    
-    
+    color:var(--nav_item);
+    border: 1px solid black;    
 }
 
 footer span, footer i{
@@ -501,16 +497,13 @@ footer span, footer i{
 
 @keyframes skill_box{
     from{
-     
-        margin-bottom: 0px;
-        
-        
+        transform: scale(1);
     }
 
     to{
         /* background-image: linear-gradient(135deg,rgba(95, 196, 255,0.5),rgba(58, 58, 58, 0.1)); */
         box-shadow: 0px 0px 5px black;
-        margin-top: 5px;
+        transform: scale(1.05);
         
     }
 }
@@ -560,18 +553,25 @@ footer span, footer i{
 
 @media screen and (max-width:1400px) {
     body{
-        padding: 20px;
+        padding: 0px;
+    }
+
+    .welcome{
+        justify-content: center;
     }
 
     #mydesc{
         font-size: 46px;
         width: 80%;
+        
     }
 
 
-    #about-me h1{
-        margin-left: 50px;
+    .mypic_background{
+        margin-left: 110px;
     }
+    
+    
 
 
     .contact_details_container{
@@ -625,6 +625,10 @@ footer span, footer i{
         align-items: center;
     }
 
+    .mypic_background{
+        margin-left: 0px;
+    }
+    
 
     .welcome{
         flex-direction: column;
@@ -640,12 +644,9 @@ footer span, footer i{
     }
 
     .about_me_text{
-        text-align: center;
+
         font-size: 26px;
-        max-width: 500px;
-        margin-left: 0;
-        
-        
+        max-width: 85%;
        
     }
 
@@ -653,7 +654,6 @@ footer span, footer i{
 
 
 }
-
 
 
 @media screen and (max-width:650px) {
@@ -670,15 +670,35 @@ footer span, footer i{
 
 
     .about_me_text{
-        
-        font-size: 24px;
-        max-width: 400px;
-        margin-left: 30px;
-        max-width: 300px;
-       
+        font-size: 22px;
+     
+    }
+
+    #skill_box{
+        margin-right: 0;
+        margin-left: 0;
+        padding-bottom: 10px;
+    }
+
+    h1{
+        font-size: 56px;
     }
 
     button{
         align-self: center;
+    }
+
+    @keyframes popText{
+        from{
+           opacity: 0;
+           margin-left: 0px;
+        }
+    
+        to{
+            
+            opacity: 1;
+            margin-left: 70px;
+            
+        }
     }
 }
